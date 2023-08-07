@@ -1,45 +1,45 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Password Generator</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="center-container dark-mode">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
       <h1>Password Generator</h1>
 
-      <div class="options">
-        <div class="option">
-          <label for="length">Password Length:</label>
-          <input type="number" id="length" min="6" step="1" value="12">
-        </div>
-
-        <div class="option">
-          <label for="includeNumbers">Include Numbers:</label>
-          <input type="checkbox" id="includeNumbers">
-        </div>
-
-        <div class="option">
-          <label for="includeSpecialChars">Include Special Characters:</label>
-          <input type="checkbox" id="includeSpecialChars">
-        </div>
-
-        <div class="option">
-          <label for="includeUppercase">Include Uppercase Letters:</label>
-          <input type="checkbox" id="includeUppercase">
-        </div>
+      <div>
+        <label for="password-length">Password Length:</label>
+        <input type="number" id="password-length" value="12" />
       </div>
 
-      <button onclick="generatePassword()">Generate Password</button>
-
-      <div class="password-container">
-        <input placeholder="password" type="text" id="password" readonly>
-        <button class="copy-button" onclick="copyPassword()">Copy</button>
+      <div>
+        <input type="checkbox" id="include-numbers" />
+        <label for="include-numbers">Include Numbers</label>
       </div>
+
+      <div>
+        <input type="checkbox" id="include-symbols" />
+        <label for="include-symbols">Include Symbols</label>
+      </div>
+
+      <button id="generate-btn">Generate</button>
+
+      <div class="password-display">
+        <input
+          placeholder="password"
+          type="text"
+          id="generated-password"
+          readonly
+        />
+        <button id="copy-btn">Copy</button>
+      </div>
+
+      <div id="confirmation-message"></div>
     </div>
-  </div>
-  <script src="script.js"></script>
-</body>
+
+    <script src="script.js"></script>
+  </body>
 </html>
